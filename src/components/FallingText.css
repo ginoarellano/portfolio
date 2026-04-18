@@ -1,0 +1,47 @@
+
+.falling-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #161a20;
+  padding-top: 3%;
+  padding-bottom: 7%;
+
+
+}
+
+.falling-text-container {
+  width: 90%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  background: #161a20;
+  border-radius: 8px;
+  border: 0.5px solid rgb(195, 195, 196);
+}
+
+.falling-text-target {
+  display: inline-block;
+  font-weight: bold;
+  color: #000000;
+}
+
+.word {
+  display: inline-block;
+  margin: 0 4px;
+  user-select: none;
+  color: #faf8f8;
+}
+
+.highlighted {
+  color: lch(78.6% 26.49 264.98);
+  font-weight: bold;
+}
+
+.falling-text-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}

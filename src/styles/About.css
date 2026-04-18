@@ -1,0 +1,212 @@
+.about-ethereal-container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #161a20;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 1% 12%;
+  position: relative;
+  /* CRITICAL: Let the browser handle the scroll */
+  overflow-y: visible;
+  font-family: 'Gill Sans', sans-serif;
+}
+
+/* Background Logic */
+.ethereal-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.orb { position: absolute; border-radius: 50%; filter: blur(100px); opacity: 0.1; }
+.orb-1 { width: 500px; height: 500px; background: #9fc6f3; top: -10%; right: -5%; animation: floatOrb 12s infinite alternate; }
+.orb-2 { width: 400px; height: 400px; background: #4570a0; bottom: 5%; left: -5%; animation: floatOrb 10s infinite alternate-reverse; }
+.orb-3 { width: 300px; height: 300px; background: #3b4f65; top: 40%; left: 30%; opacity: 0.05; animation: floatOrb 15s infinite linear; }
+
+@keyframes floatOrb {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(40px, 60px) scale(1.1); }
+}
+
+.about-hero { display: flex; justify-content: space-between; gap: 3rem; width: 100%; z-index: 1; }
+.about-left { flex: 1.5; }
+.about-title { font-size: 2.7rem; font-weight: 650; color: #9fc6f3; margin-bottom: 1.2rem; }
+.about-description { font-size: 0.95rem; line-height: 1.6; opacity: 0.85; margin-bottom: 2rem; max-width: 700px; }
+
+.highlight-entry { margin-bottom: 1.5rem; border-left: 2px solid #4570a0; padding-left: 1.5rem; }
+.highlight-entry h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; color: #9fc6f3; margin-bottom: 0.5rem; }
+.highlight-entry p { font-size: 0.85rem; margin-bottom: 0.3rem; color: #e0e0e0; }
+
+.cert-button-group { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.mini-cert-btn { padding: 6px 14px; font-size: 0.7rem; background: rgba(159, 198, 243, 0.05); border: 1px solid rgba(159, 198, 243, 0.3); border-radius: 20px; color: #fff; text-decoration: none; transition: 0.3s ease; }
+.mini-cert-btn:hover { background: rgba(159, 198, 243, 0.2); box-shadow: 0 0 15px rgba(159, 198, 243, 0.2); }
+
+/* Glass Card */
+.persona-card-glass { width: 100%; max-width: 350px; background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 25px; }
+.mac-dot { width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; display: inline-block; }
+.themed-red { background: #4570a0; opacity: 0.5; }
+.themed-yellow { background: #9fc6f3; }
+.themed-blue { background: #3b4f65; }
+
+.role-ethereal { color: #9fc6f3; font-family: monospace; font-size: 0.9rem; margin-bottom: 15px; opacity: 0.8; }
+.stat-glass { display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 10px; opacity: 0.7; }
+.glass-hr { border: 0; border-top: 1px solid rgba(255, 255, 255, 0.05); margin: 15px 0; }
+
+/* Modal Navigation Fix */
+.cert-modal-overlay { position: fixed; inset: 0; background: rgba(10, 12, 16, 0.96); display: flex; justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(10px); }
+.cert-modal-content-glass { position: relative; width: 95%; max-width: 1100px; text-align: center; }
+
+.modal-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.modal-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
+}
+
+.large-cert-view-glass {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  box-shadow: 0 0 40px rgba(0,0,0,0.5);
+}
+
+.plain-nav-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 5rem;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: 0.3s;
+}
+.plain-nav-btn:hover { opacity: 1; color: #9fc6f3; }
+
+.close-modal-glass { position: absolute; top: -60px; right: 0; background: none; border: none; color: #fff; font-size: 3.5rem; cursor: pointer; opacity: 0.5; }
+.modal-cert-title { margin-top: 25px; font-size: 1.2rem; color: #9fc6f3; text-transform: uppercase; letter-spacing: 2px; }
+
+/* Small cert slider in about page */
+.cert-slider-glass { display: flex; align-items: center; justify-content: space-between; background: rgba(255, 255, 255, 0.03); padding: 15px; border-radius: 12px; margin-top: 25px; }
+.cert-img-ethereal { width: 100%; max-height: 110px; object-fit: contain; border-radius: 4px; cursor: zoom-in; }
+.slider-arrow-plain { background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; opacity: 0.3; }
+.slider-arrow-plain:hover { opacity: 1; color: #9fc6f3; }
+
+
+/* --- MOBILE RESPONSIVENESS (iPhone 14/15 Pro Max) --- */
+@media (max-width: 430px) {
+  .about-ethereal-container {
+    height: auto !important; 
+    min-height: 100vh;
+    padding: 100px 8% 80px; /* Matching the sidebar padding we discussed */
+    display: block; /* Allows natural stacking on mobile */
+    overflow-y: visible;
+  }
+
+  .about-hero {
+    flex-direction: column; 
+    gap: 3.5rem; /* More space between sections */
+  }
+
+  .about-left {
+    width: 100%;
+    text-align: left;
+    padding-right: 5px; /* Tiny buffer */
+  }
+
+  .about-title {
+    font-size: 2.3rem; 
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .about-description {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    text-align: justify; /* Makes text edges look cleaner on mobile */
+  }
+
+  .highlight-entry {
+    padding-left: 1.2rem;
+    margin-bottom: 2rem;
+    border-left-width: 3px; /* Stronger accent on mobile */
+  }
+
+  .cert-button-group {
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  /* Persona Card Mobile Fix */
+  .about-right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+  }
+
+  .persona-card-glass {
+    max-width: 100%; 
+    padding: 25px;
+    border-radius: 18px;
+    margin: 0 auto;
+  }
+
+  .stat-glass {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+  }
+
+  /* Modal Mobile Fix */
+  .cert-modal-content-glass {
+    width: 92%;
+    padding: 50px 15px 30px; 
+  }
+
+  .plain-nav-btn {
+    font-size: 2.2rem; 
+  }
+
+  .large-cert-view-glass {
+    max-height: 45vh; 
+  }
+
+  .close-modal-glass {
+    top: 10px;
+    right: 15px;
+    font-size: 2.2rem;
+  }
+}
+
+/* --- ABOUT / SKILLS MOBILE FIX --- */
+@media (max-width: 430px) {
+  .about-ethereal-container, 
+  .skills-ethereal-container {
+    padding: 100px 8% 60px !important; /* Adds the missing side padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Ensure the skill cards don't hit the screen edges */
+  .skill-card, .cert-card {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+  
+  /* Fix for the "Technical Spectrum" title */
+  h1 {
+    font-size: 1.8rem !important;
+    word-wrap: break-word;
+  }
+}

@@ -1,0 +1,210 @@
+.skills-ethereal-container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #161a20;
+  color: #fff;
+  padding: 4% 10%; 
+  position: relative;
+  /* CRITICAL: Let the browser handle the scroll */
+  overflow-y: visible; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Gill Sans', sans-serif;
+}
+
+/* Background Logic */
+.ethereal-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.12;
+}
+
+.orb-1 { width: 350px; height: 350px; background: #9fc6f3; top: -5%; right: -2%; animation: float 10s infinite alternate; }
+.orb-2 { width: 250px; height: 250px; background: #4570a0; bottom: 5%; left: -2%; animation: float 8s infinite alternate-reverse; }
+
+@keyframes float {
+  from { transform: translate(0, 0); }
+  to { transform: translate(20px, 40px); }
+}
+
+.skills-header {
+  text-align: center;
+  z-index: 1;
+  margin-bottom: 2.5rem;
+}
+
+.skills-header h1 {
+  font-size: 2.2rem;
+  letter-spacing: 4px;
+  color: #9fc6f3;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.skills-header p {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-top: 5px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+  z-index: 1;
+}
+
+.skill-glass-card-rect {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.2rem 1.8rem;
+  transition: all 0.3s ease;
+}
+
+.card-content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.category-icon {
+  font-size: 1.8rem;
+}
+
+.card-right-info h2 {
+  font-size: 1rem;
+  color: #9fc6f3;
+  margin-bottom: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.skill-list-compact {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.4rem;
+}
+
+.skill-list-compact li {
+  font-size: 0.8rem;
+  opacity: 0.85;
+  color: #e0e0e0;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.skill-list-compact li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: #4570a0;
+  font-weight: bold;
+}
+
+.skills-footer-note {
+  margin-top: 3rem;
+  z-index: 1;
+  opacity: 0.4;
+  font-size: 0.75rem;
+}
+
+/* --- MOBILE RESPONSIVENESS (iPhone 14/15 Pro Max) --- */
+@media (max-width: 430px) {
+  .skills-ethereal-container {
+    height: auto !important; /* Allow it to grow beyond 100vh */
+    min-height: 100vh;
+    padding: 100px 9% 60px; /* Matching the sidebar padding we discussed */
+    overflow-y: visible;
+  }
+
+  .skills-header h1 {
+    font-size: 1.7rem; 
+    letter-spacing: 2px;
+    line-height: 1.2;
+  }
+
+  .skills-header p {
+    font-size: 0.8rem;
+    max-width: 280px;
+    margin: 8px auto 0;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .skill-glass-card-rect {
+    padding: 1.5rem; /* Even padding for better balance on mobile */
+    border-radius: 18px;
+  }
+
+  .card-content-wrapper {
+    gap: 1.2rem;
+    align-items: flex-start; /* Kept to top for list alignment */
+  }
+
+  .category-icon {
+    font-size: 1.6rem;
+  }
+
+  .card-right-info h2 {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .skill-list-compact li {
+    font-size: 0.8rem;
+    padding-left: 1.2rem;
+    margin-bottom: 2px;
+  }
+
+  .orb-1 { width: 280px; height: 280px; }
+  .orb-2 { width: 220px; height: 220px; }
+
+  .skills-footer-note {
+    margin-top: 3rem;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}
+
+/* --- ABOUT / SKILLS MOBILE FIX --- */
+@media (max-width: 430px) {
+  .about-ethereal-container, 
+  .skills-ethereal-container {
+    padding: 100px 8% 60px !important; /* Adds the missing side padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Ensure the skill cards don't hit the screen edges */
+  .skill-card, .cert-card {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+  
+  /* Fix for the "Technical Spectrum" title */
+  h1 {
+    font-size: 1.8rem !important;
+    word-wrap: break-word;
+  }
+}

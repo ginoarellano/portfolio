@@ -1,0 +1,179 @@
+/* ============================================================
+   HOME.CSS - FINAL LOCKED VERSION
+   ============================================================ */
+
+.home-container {
+  background-color: #161a20;
+  width: 100%;
+}
+
+/* 1. HERO SECTION */
+.hero-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #161a20;
+  overflow: hidden;
+}
+
+.hero-squares {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1;
+  opacity: 5;
+}
+
+.hero-content h1 {
+  font-family: 'Gill Sans', sans-serif;
+  color: #9fc6f3 !important; 
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  position: relative;
+  z-index: 10;
+}
+
+.focus-buttons {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* 2. BIO SECTION */
+.home-main-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 120px 10%;
+  background-color: #161a20;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  gap: 5rem;
+  min-height: 80vh;
+}
+
+.main-left { flex: 1; }
+.bio-name { font-size: 3.5rem; color: #ffffff; font-weight: 800; line-height: 1.1; margin-bottom: 10px; font-family: 'Gill Sans', sans-serif; }
+.bio-title { font-size: 1.5rem; color: #9fc6f3; margin-bottom: 25px; font-family: 'Gill Sans', sans-serif; }
+.bio-description { font-size: 1.1rem; line-height: 1.7; color: #ffffff; opacity: 0.8; max-width: 600px; margin-bottom: 40px; }
+
+.main-right { flex: 1; display: flex; justify-content: center; }
+.profile-img { 
+  width: 100%; 
+  max-width: 450px; 
+  border-radius: 25px; 
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6); 
+  border: 1px solid rgba(159, 198, 243, 0.2); 
+}
+
+/* ============================================================
+   3. BUTTON STYLES 
+   ============================================================ */
+.btn-group {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 14px 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Gill Sans', sans-serif;
+  border: none;
+}
+
+/* Dark Button - Dive In */
+.dive-btn {
+  background-color: #27303d;
+  color: #ffffff;
+  border: 1px solid rgba(159, 198, 243, 0.3);
+}
+
+.dive-btn:hover {
+  background-color: #354252;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* White Button - Download CV */
+.cv-btn {
+  background-color: #ffffff;
+  color: #161a20;
+}
+
+.cv-btn:hover {
+  background-color: #9fc6f3;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(159, 198, 243, 0.2);
+}
+
+/* 4. TECH STACK & FOOTER SPACING */
+.blur-main { padding: 100px 0 40px; text-align: center; }
+.falling-section-wrapper { width: 100%; display: flex; justify-content: center; padding-bottom: 150px; }
+
+@media (max-width: 1024px) {
+  .home-main-section { flex-direction: column-reverse; text-align: center; padding: 80px 5%; }
+  .btn-group { justify-content: center; }
+}
+
+/* --- iPHONE 15 PRO MAX MOBILE FIXES --- */
+@media (max-width: 430px) {
+  /* Fix the Welcome Section */
+  .hero-content h1 {
+    font-size: 1.6rem !important; /* Smaller to prevent cutting */
+    padding: 0 10%;
+    line-height: 1.3;
+  }
+
+  .focus-container .focus-word {
+    font-size: 1.4rem !important;
+    white-space: nowrap; /* Keeps names from breaking weirdly */
+  }
+
+  /* Fix the Bio Section (Name & Description) */
+  .home-main-section {
+    flex-direction: column-reverse; /* Photo on top, text below */
+    padding: 80px 8% 60px !important;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .bio-name {
+    font-size: 2.2rem !important;
+    padding: 0 5%;
+  }
+
+  .bio-description {
+    font-size: 1rem;
+    padding: 0 5%;
+    margin: 0 auto 30px;
+  }
+
+  .btn-group {
+    justify-content: center; /* Centers Dive In & CV buttons */
+    width: 100%;
+  }
+
+  .profile-img {
+    max-width: 85%; /* Keeps your photo from being too huge on mobile */
+    margin: 0 auto;
+  }
+}
