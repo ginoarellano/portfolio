@@ -38,13 +38,13 @@
   letter-spacing: 4px;
   position: relative;
   z-index: 10;
+  margin-top: -8rem;
 }
 
 .focus-buttons {
   position: relative;
   z-index: 10;
   width: 100%;
-  padding-top: 2.5rem;
   display: flex;
   justify-content: center;
 }
@@ -54,7 +54,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 120px 10%;
+  padding: 3rem 10%;
   background-color: #161a20;
   position: relative;
   z-index: 10;
@@ -126,7 +126,7 @@
 }
 
 /* 4. TECH STACK & FOOTER SPACING */
-.blur-main { padding: 100px 0 40px; text-align: center; }
+.blur-main { padding: 60px 0 40px; text-align: center; }
 .falling-section-wrapper { width: 100%; display: flex; justify-content: center; padding-bottom: 150px; }
 
 @media (max-width: 1024px) {

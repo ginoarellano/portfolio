@@ -19,10 +19,10 @@ function Home() {
       
       <section className="hero-wrapper">
         <Squares
-          speed={0.5}
-          squareSize={40}
+          speed={0.2}
+          squareSize={50}
           direction="diagonal"
-          borderColor="#ffffff80"   
+          borderColor="#ffffff67"   
           hoverFillColor="#27303d"  
           className="hero-squares"
         />
@@ -89,9 +89,9 @@ function Home() {
 
       <section className="falling-section-wrapper">
         <FallingText
-          text="HTML CSS JavaScript ASP.NET C# C++ SQL Arduino ESP32 SSMS Oracle MySQL Figma Framer Frontend UIUX ReactBits Blynk Responsive Database Cybersecurity Networking Troubleshooting GitHub React"
+          text="HTML CSS JavaScript ASP.NET C# C++ SQL Arduino ESP32 SSMS Oracle MySQL Figma UIUX ReactBits Blynk Cybersecurity Networking Troubleshooting GitHub React"
           highlightWords={["React", "GitHub", "Frontend", "UIUX", "IoT"]}
-          fontSize="1.8rem"
+          fontSize="1.5rem"
           gravity={0.6}
           trigger="scroll"   
         />

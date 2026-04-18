@@ -12,7 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { NavLink } from 'react-router-dom';
 
 // ✅ Import your logo here
-import PageLogo from '../images/PAGE-LOGO-SOLO.png';
+import PageLogo from '../images/GLOSSY-LOGO.png';
 
 const pages = ['Home', 'About', 'Skills', 'Projects'];
 
