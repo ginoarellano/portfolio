@@ -7,9 +7,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import certIBM from '../images/CERT_IBMBUILD.jpg';
 import certData from '../images/CERT_DATASCIENCES.jpg';
 import certCyber from '../images/CERT_CYBERSECURITY.jpg';
+import certNetwork from '../images/CERT_NETWORK.jpg';
+import certShe from '../images/CERT_SHE.jpg';
+import certCisco from '../images/CERT_CISCO.jpg';
 
 function About() {
-  // CRITICAL: Forces the page to the top when navigating here
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -17,12 +19,25 @@ function About() {
   const certs = [
     { img: certIBM, title: "AI Fundamentals" },
     { img: certData, title: "Data Science" },
-    { img: certCyber, title: "Cybersecurity" }
+    { img: certCyber, title: "Cybersecurity" },
+    { img: certNetwork, title: "Network Defense" },
+    { img: certShe, title: "SHE++ Alibaba Cloud" },
+    { img: certCisco, title: "Packet Tracer" }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [direction, setDirection] = useState(0);
+
+  // AUTO SLIDER: Changes every 2 seconds
+  useEffect(() => {
+    if (isModalOpen) return;
+    const timer = setInterval(() => {
+      setDirection(1);
+      setCurrentIndex((prev) => (prev + 1) % certs.length);
+    }, 2000);
+    return () => clearInterval(timer);
+  }, [isModalOpen, certs.length]);
 
   const nextCert = () => {
     setDirection(1);
@@ -34,13 +49,10 @@ function About() {
     setCurrentIndex((prev) => (prev - 1 + certs.length) % certs.length);
   };
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
-
   const variants = {
-    enter: (direction) => ({ x: direction > 0 ? 200 : -200, opacity: 0 }),
+    enter: (direction) => ({ x: direction > 0 ? 100 : -100, opacity: 0 }),
     center: { x: 0, opacity: 1 },
-    exit: (direction) => ({ x: direction < 0 ? 200 : -200, opacity: 0 })
+    exit: (direction) => ({ x: direction < 0 ? 100 : -100, opacity: 0 })
   };
 
   return (
@@ -69,6 +81,7 @@ function About() {
                 <a href="https://www.credly.com/earner/earned/share/00132c76-4834-44b9-8665-f08949dbc29f" target="_blank" rel="noopener noreferrer" className="mini-cert-btn">Data Science Verified</a>
                 <a href="https://www.credly.com/earner/earned/share/e568039a-140d-44b9-be82-e11f888586bb" target="_blank" rel="noopener noreferrer" className="mini-cert-btn">Cybersecurity Verified</a>
                 <a href="https://www.credly.com/badges/8a3bc63b-ab87-48cf-8581-ae1fc0eeec77" target="_blank" rel="noopener noreferrer" className="mini-cert-btn">AI Fundamentals Verified</a>
+                <a href="https://www.credly.com/earner/earned/share/9da24c35-5a3f-439a-a1ab-f5950b657511" target="_blank" rel="noopener noreferrer" className="mini-cert-btn">Network Defense Verified</a>
               </div>
             </div>
 
@@ -103,13 +116,27 @@ function About() {
               <div className="stat-glass"><span>Uptime:</span> <span>4th Year IT Student</span></div>
               <div className="stat-glass"><span>Status:</span> <span>Seeking Opportunities</span></div>
               <div className="stat-glass"><span>Specialty:</span> <span>Front-End & UI/UX</span></div>
+              {/* Badges removed from here */}
             </div>
 
             <div className="cert-slider-glass">
               <button className="slider-arrow-plain" onClick={prevCert}>&#10216;</button>
-              <div className="cert-display-glass" onClick={openModal}>
-                <img src={certs[currentIndex].img} alt="Cert" className="cert-img-ethereal" />
-                <p className="cert-label-ethereal">{certs[currentIndex].title}</p>
+              <div className="cert-display-glass" onClick={() => setIsModalOpen(true)}>
+                <AnimatePresence custom={direction} mode="wait">
+                  <motion.div
+                    key={currentIndex}
+                    custom={direction}
+                    variants={variants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{ x: { type: "spring", stiffness: 300, damping: 30 }, opacity: { duration: 0.2 } }}
+                    style={{ width: '100%', textAlign: 'center' }}
+                  >
+                    <img src={certs[currentIndex].img} alt="Cert" className="cert-img-ethereal" />
+                    <p className="cert-label-ethereal">{certs[currentIndex].title}</p>
+                  </motion.div>
+                </AnimatePresence>
               </div>
               <button className="slider-arrow-plain" onClick={nextCert}>&#10217;</button>
             </div>
@@ -119,20 +146,11 @@ function About() {
 
       <AnimatePresence>
         {isModalOpen && (
-          <motion.div 
-            className="cert-modal-overlay" 
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }} 
-            exit={{ opacity: 0 }}
-            onClick={closeModal}
-          >
+          <motion.div className="cert-modal-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setIsModalOpen(false)}>
             <div className="cert-modal-content-glass" onClick={(e) => e.stopPropagation()}>
-              <button className="close-modal-glass" onClick={closeModal}>&times;</button>
-              
-              {/* FLEX CONTAINER FOR HORIZONTAL ALIGNMENT */}
+              <button className="close-modal-glass" onClick={() => setIsModalOpen(false)}>&times;</button>
               <div className="modal-nav-container">
                 <button className="plain-nav-btn" onClick={prevCert}>&#10216;</button>
-                
                 <div className="modal-image-wrapper">
                   <AnimatePresence custom={direction} mode="wait">
                     <motion.img
@@ -148,10 +166,8 @@ function About() {
                     />
                   </AnimatePresence>
                 </div>
-
                 <button className="plain-nav-btn" onClick={nextCert}>&#10217;</button>
               </div>
-              
               <h3 className="modal-cert-title">{certs[currentIndex].title}</h3>
             </div>
           </motion.div>
