@@ -78,10 +78,10 @@ function About() {
             <div className="highlight-entry">
               <h3>Professional Credentials</h3>
               <div className="cert-button-group">
-                <a href="https://www.credly.com/earner/earned/share/00132c76-4834-44b9-8665-f08949dbc29f" target="_blank" rel="noopener noreferrer" className="mini-cert-btn">Data Science Verified</a>
-                <a href="https://www.credly.com/earner/earned/share/e568039a-140d-44b9-be82-e11f888586bb" target="_blank" rel="noopener noreferrer" className="mini-cert-btn">Cybersecurity Verified</a>
-                <a href="https://www.credly.com/badges/8a3bc63b-ab87-48cf-8581-ae1fc0eeec77" target="_blank" rel="noopener noreferrer" className="mini-cert-btn">AI Fundamentals Verified</a>
-                <a href="https://www.credly.com/earner/earned/share/9da24c35-5a3f-439a-a1ab-f5950b657511" target="_blank" rel="noopener noreferrer" className="mini-cert-btn">Network Defense Verified</a>
+                <a href="https://www.credly.com/badges/00132c76-4834-44b9-8665-f08949dbc29f/public_url" target="_blank" rel="noopener noreferrer" className="mini-cert-btn">Data Science Verified</a>
+                <a href="https://www.credly.com/badges/e568039a-140d-44b9-be82-e11f888586bb/public_url" target="_blank" rel="noopener noreferrer" className="mini-cert-btn">Cybersecurity Verified</a>
+                <a href="https://www.credly.com/badges/8a3bc63b-ab87-48cf-8581-ae1fc0eeec77/public_url" target="_blank" rel="noopener noreferrer" className="mini-cert-btn">AI Fundamentals Verified</a>
+                <a href="https://www.credly.com/badges/9da24c35-5a3f-439a-a1ab-f5950b657511/public_url" target="_blank" rel="noopener noreferrer" className="mini-cert-btn">Network Defense Verified</a>
               </div>
             </div>
 
