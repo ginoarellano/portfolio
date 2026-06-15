@@ -18,6 +18,12 @@ import b1 from '../images/PROJ_BRGY.png';
 import b2 from '../images/PROJ_BRGY1.png';
 import b3 from '../images/PROJ_BRGY2.png';
 
+// Crypt-Natin Image Imports
+import c1 from '../images/CRYPT1.png';
+import c2 from '../images/CRYPT2.png';
+import c3 from '../images/CRYPT3.png';
+import c4 from '../images/CRYPT4.png';
+
 const ProjectCard = ({ project, onOpen, index }) => {
   const [imgIndex, setImgIndex] = useState(0);
 
@@ -68,6 +74,13 @@ function Projects() {
   const [modalImgIndex, setModalImgIndex] = useState(0);
 
   const sidebarProjects = [
+    {
+      title: "CRYPT-NATIN",
+      shortDesc: "Enhanced Baybayin cryptographic protocol and translation engine.",
+      fullDesc: "A specialized cryptographic platform featuring an Enhanced Baybayin Protocol. It transforms raw messages through smart phonetic normalization, maps characters to legacy script values, applies a Custom Caesar Shift (+3), and reverses the output. Built with a reactive frontend providing algorithmic live tracing for both encryption and decryption modes.",
+      tech: ["React", "JavaScript", "Framer Motion", "Vercel"],
+      images: [c1, c2, c3, c4]
+    },
     {
       title: "TRASHURE: System",
       shortDesc: "The core architecture of the automated waste kiosk.",
