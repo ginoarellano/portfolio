@@ -68,9 +68,9 @@ function About() {
           <SplitText text="WHO IS GINO?" tag="h1" className="about-title" delay={0.08} />
           
           <p className="about-description">
-            I am a <strong>motivated 4th-year IT student</strong> at Quezon City University specializing in 
-            Front-End Development and UI/UX Design. I have a proven track record of creating 
-            responsive web applications and integrating hardware with software solutions. 
+            I am a <strong>Bachelor of Science in Information Technology graduate (Cum Laude)</strong> from Quezon City University, 
+            specializing in networking, cybersecurity, and IT support. With a strong foundation in front-end development 
+            and UI/UX design, I am passionate about securing digital environments and optimizing operational workflows. 
             Beyond tech, I am a content creator with a community of <strong>116K+ followers</strong>.
           </p>
 
@@ -87,16 +87,16 @@ function About() {
 
             <div className="highlight-entry">
               <h3>Academic Excellence</h3>
-              <p>• <strong>Quezon City University:</strong> 3x Dean's Lister (2022-2024)</p>
+              <p>• <strong>Quezon City University:</strong> BSIT (Cum Laude)</p>
               <p>• <strong>Lagro High School:</strong> STEM Graduate with High Honors</p>
               <p>• <strong>Camarin High School:</strong> JHS Graduate with Honors</p>
             </div>
 
             <div className="highlight-entry">
               <h3>Experience</h3>
-              <p>• <strong>IT Intern:</strong> Mitzy Travel and Tours Inc. (2026)</p>
-              <p>• <strong>Creative Team & Model:</strong> Medieval MNL (2025)</p>
-              <p>• <strong>Social Media Manager:</strong> Himawari PH (2023-2024)</p>
+              <p>• <strong>IT Intern:</strong> Mitzy Travel and Tours Inc. (2025-2026)</p>
+              <p>• <strong>Social Media Manager:</strong> Medieval MNL & Himawari PH (2023-2025)</p>
+              <p>• <strong>Freelance Model & Content Creator:</strong> (2020-Present)</p>
             </div>
           </div>
         </div>
@@ -112,11 +112,10 @@ function About() {
               <h3>Gino Christian E. Arellano</h3>
               <p className="role-ethereal">Optimizing code & aesthetic.exe</p>
               <hr className="glass-hr" />
-              <div className="stat-glass"><span>System:</span> <span>Student / Developer</span></div>
-              <div className="stat-glass"><span>Uptime:</span> <span>4th Year IT Student</span></div>
+              <div className="stat-glass"><span>System:</span> <span>IT Graduate</span></div>
+              <div className="stat-glass"><span>Achievement:</span> <span>Cum Laude</span></div>
               <div className="stat-glass"><span>Status:</span> <span>Seeking Opportunities</span></div>
-              <div className="stat-glass"><span>Specialty:</span> <span>Front-End & UI/UX</span></div>
-              {/* Badges removed from here */}
+              <div className="stat-glass"><span>Specialty:</span> <span>Networking / Security</span></div>
             </div>
 
             <div className="cert-slider-glass">
@@ -144,6 +143,7 @@ function About() {
         </div>
       </section>
 
+      {/* RESTORED MODAL LOGIC */}
       <AnimatePresence>
         {isModalOpen && (
           <motion.div className="cert-modal-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setIsModalOpen(false)}>

@@ -69,7 +69,7 @@ function Home() {
           </button>
 
           <a 
-            href="/GinoChristian_Arellano_CV.pdf" 
+            href="/Gino_Arellano_CV (Updated).pdf" 
             download 
             className="btn cv-btn"
           >
