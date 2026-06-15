@@ -77,7 +77,7 @@ function Projects() {
     {
       title: "CRYPT-NATIN",
       shortDesc: "Enhanced Baybayin cryptographic protocol and translation engine.",
-      fullDesc: "A specialized cryptographic platform featuring an Enhanced Baybayin Protocol. It transforms raw messages through smart phonetic normalization, maps characters to legacy script values, applies a Custom Caesar Shift (+3), and reverses the output. Built with a reactive frontend providing algorithmic live tracing for both encryption and decryption modes.",
+      fullDesc: "A specialized cryptographic platform featuring an Enhanced Baybayin Protocol. It transforms raw messages through smart phonetic normalization, maps characters to legacy script values, applies a Custom Caesar Shift (+3), and reverses the output. Built with a reactive frontend providing algorithmic live tracing for both encryption and decryption modes. Click here: https://crypt-natin.vercel.app/",
       tech: ["React", "JavaScript", "Framer Motion", "Vercel"],
       images: [c1, c2, c3, c4]
     },
