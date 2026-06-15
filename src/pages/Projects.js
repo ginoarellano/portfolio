@@ -77,7 +77,8 @@ function Projects() {
     {
       title: "CRYPT-NATIN",
       shortDesc: "Enhanced Baybayin cryptographic protocol and translation engine.",
-      fullDesc: "A specialized cryptographic platform featuring an Enhanced Baybayin Protocol. It transforms raw messages through smart phonetic normalization, maps characters to legacy script values, applies a Custom Caesar Shift (+3), and reverses the output. Built with a reactive frontend providing algorithmic live tracing for both encryption and decryption modes. Click here: https://crypt-natin.vercel.app/",
+      fullDesc: "A specialized cryptographic platform featuring an Enhanced Baybayin Protocol. It transforms raw messages through smart phonetic normalization, maps characters to legacy script values, applies a Custom Caesar Shift (+3), and reverses the output. Built with a reactive frontend providing algorithmic live tracing for both encryption and decryption modes.",
+      link: "https://crypt-natin.vercel.app/", // <-- Add this line
       tech: ["React", "JavaScript", "Framer Motion", "Vercel"],
       images: [c1, c2, c3, c4]
     },
@@ -220,16 +221,40 @@ function Projects() {
                 </div>
 
                 <div className="modal-text-side">
-                  <h2>{selectedProject.title}</h2>
-                  <div className="modal-scroll-desc">
-                    <p>{selectedProject.fullDesc}</p>
+                    <h2>{selectedProject.title}</h2>
+                    
+                    <div className="modal-scroll-desc">
+                      <p>{selectedProject.fullDesc}</p>
+                      
+                      {/* Add this block right below your description paragraph */}
+                      {selectedProject.link && (
+                        <div className="modal-link-wrapper" style={{ marginTop: '15px' }}>
+                          <a 
+                            href={selectedProject.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="modal-live-link"
+                            style={{
+                              color: '#64ffda', /* Use your theme's highlight color */
+                              textDecoration: 'none',
+                              fontWeight: '600',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '5px'
+                            }}
+                          >
+                            Visit Live Site ↗
+                          </a>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="modal-tech-footer">
+                      {selectedProject.tech.map((t, i) => (
+                        <span key={i} className="mini-bordered-tag">{t}</span>
+                      ))}
+                    </div>
                   </div>
-                  <div className="modal-tech-footer">
-                    {selectedProject.tech.map((t, i) => (
-                      <span key={i} className="mini-bordered-tag">{t}</span>
-                    ))}
-                  </div>
-                </div>
               </div>
             </motion.div>
           </motion.div>
